@@ -7,6 +7,6 @@ import su.u_c.deadzone.DeadZone
 object DesktopLauncher {
 	def main(arg: Array[String]) {
 		val config = new LwjglApplicationConfiguration
-		new LwjglApplication(new DeadZone, config)
+		new LwjglApplication(new DeadZone(arg), config)
 	}
 }

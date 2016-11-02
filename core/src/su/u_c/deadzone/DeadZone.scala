@@ -6,7 +6,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.utils.viewport.{ScreenViewport, Viewport}
 
 
-class DeadZone extends ApplicationAdapter {
+class DeadZone(args: Array[String]) extends ApplicationAdapter {
   var Width: Int = _
   var Height: Int = _
   var batch: SpriteBatch = _
@@ -19,6 +19,15 @@ class DeadZone extends ApplicationAdapter {
     camera = new OrthographicCamera()
     viewport = new ScreenViewport(camera)
     img = new Texture("logo.png")
+
+    // Read console line arguments
+    if (args.length >= 2) {
+      Config.Host = args(0)
+      Config.Port = args(1)
+    } else {
+      println("Error: specify hostname and port attributes!")
+      Gdx.app.exit()
+    }
   }
 
   override def resize(width: Int, height: Int): Unit = {
