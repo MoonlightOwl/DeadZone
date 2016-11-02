@@ -33,6 +33,7 @@ allprojects {
 
 project(":desktop") {
     apply plugin: "java"
+    apply plugin: "scala"
 
 
     dependencies {
@@ -53,6 +54,8 @@ project(":core") {
         compile "com.badlogicgames.gdx:gdx:$gdxVersion"
         compile "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
         compile "org.scala-lang:scala-library:2.11.8"
+        compile group: 'com.trueaccord.scalapb', name: 'scalapb-runtime_2.11', version: '0.5.43'
+        compile group: 'com.google.protobuf', name: 'protobuf-java', version: '3.1.0'
     }
 }
 
